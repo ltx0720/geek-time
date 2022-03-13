@@ -62,6 +62,10 @@ cms 使用三色标记算法。
 
 
 
+CMS full gc ？
+
+
+
 ### 三、G1
 
 G1提供了两种GC模式，Young GC和Mixed GC。
@@ -72,5 +76,5 @@ G1提供了两种GC模式，Young GC和Mixed GC。
 
 ![image-20220313224612182](/Users/ltx/Documents/img-repo//image-20220313224612182.png)
 
-
+继续研究！
 
