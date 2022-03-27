@@ -54,40 +54,40 @@ public class T1 {
 
         System.out.println("main end 2");
 
-//
-//        // 3.CountDownLatch
-//        new Thread(()-> {
-//            String str = T1.testMethod();
-//            downLatch.countDown();
-//        }).start();
-//        downLatch.await();
-//
-//
-//        // 4.cyclicBarrier
-//        new Thread(()-> {
-//            String str = T1.testMethod();
-//            try {
-//                cyclicBarrier.await();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            } catch (BrokenBarrierException e) {
-//                e.printStackTrace();
-//            }
-//        }).start();
-//        cyclicBarrier.await();
-//
-//        // 5.信号量
-//        semaphore.acquire();
-//        new Thread(()-> {
-//            String str = T1.testMethod();
-//            System.out.println("str end");
-//            semaphore.release();
-//        }).start();
-//        semaphore.acquire();
-//        System.out.println("main end");
-//
-//
-//        System.out.println("main end");
+
+        // 3.CountDownLatch
+        new Thread(()-> {
+            String str = T1.testMethod();
+            downLatch.countDown();
+        }).start();
+        downLatch.await();
+
+
+        // 4.cyclicBarrier
+        new Thread(()-> {
+            String str = T1.testMethod();
+            try {
+                cyclicBarrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        cyclicBarrier.await();
+
+        // 5.信号量
+        semaphore.acquire();
+        new Thread(()-> {
+            String str = T1.testMethod();
+            System.out.println("str end");
+            semaphore.release();
+        }).start();
+        semaphore.acquire();
+        System.out.println("main end");
+
+
+        System.out.println("main end");
 
         return;
 
