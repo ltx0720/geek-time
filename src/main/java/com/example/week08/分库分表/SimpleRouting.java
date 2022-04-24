@@ -1,4 +1,4 @@
-package com.example.week08;
+package com.example.week08.分库分表;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

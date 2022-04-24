@@ -3,8 +3,8 @@ package com.example.week07.datasource.service;
 import com.example.week07.Order;
 import com.example.week07.datasource.DynamicDataSource;
 import com.example.week07.datasource.dao.OrderDao;
-import com.example.week08.DbParam;
-import com.example.week08.SimpleRouting;
+import com.example.week08.分库分表.DbParam;
+import com.example.week08.分库分表.SimpleRouting;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

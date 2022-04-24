@@ -1,4 +1,4 @@
-package com.example.week08;
+package com.example.week08.分库分表;
 
 public class DbParam {
 

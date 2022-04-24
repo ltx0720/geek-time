@@ -1,4 +1,4 @@
-package com.example.week08;
+package com.example.week08.分库分表;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,7 +17,7 @@ import static com.example.week07.datasource.DynamicDataSource.DATABASE_2;
 @Service
 public class RoutingAspect {
 
-    @Pointcut("@annotation(SimpleRouting)")
+    @Pointcut("@annotation(com.example.week08.分库分表.SimpleRouting)")
     public void pointCut() {
     }
 
