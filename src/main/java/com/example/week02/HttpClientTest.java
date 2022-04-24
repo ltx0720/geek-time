@@ -1,15 +1,13 @@
 package com.example.week02;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.CharsetUtils;
+import org.apache.http.util.EntityUtils;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -29,6 +27,7 @@ public class HttpClientTest {
             System.out.println("fail");
         }
 
+        String string = EntityUtils.toString(response.getEntity());
         BufferedInputStream bufferedInputStream = new BufferedInputStream(response.getEntity().getContent());
         byte[] res = new byte[1024];
         int offset = 0;

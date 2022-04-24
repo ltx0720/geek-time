@@ -1,5 +1,7 @@
 package com.example.week03.t1.server;
 
+import com.example.week07.Order;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,6 +19,8 @@ public class Server {
 
     public static void main(String[] args) throws IOException {
         new Server().listen();
+        new Order();
+
     }
 
 

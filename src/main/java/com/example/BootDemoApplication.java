@@ -1,13 +1,11 @@
 package com.example;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@EnableCaching
-@Cacheable
+@MapperScan("com.example.week07")
 public class BootDemoApplication {
 
     public static void main(String[] args) {

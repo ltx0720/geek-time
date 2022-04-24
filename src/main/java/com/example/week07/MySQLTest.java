@@ -9,24 +9,22 @@ public class MySQLTest {
 
     private static final Random random = new Random();
 
-
     public static void main(String[] args) throws SQLException {
         MySQLTest test = new MySQLTest();
         // 100w
         int count = 10000000;
-//        test.testExecute(count);
+        test.testExecute(count);
 //        test.testPrepared(count);
-        test.testPreparedAndBatch(count);
-
+//        test.testPreparedAndBatch(count);
     }
-
     /**
      * 原生 sql
      */
     public void testExecute(int count) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "1234");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test1", "root", "1234");
         Statement statement = connection.createStatement();
         long start = System.currentTimeMillis();
+        connection.setAutoCommit(false);
         while (count-- > 0) {
             Order order = buildOrder();
             String insert = "insert into `order` (orderNo, user_id, goods_id, count, create_time, update_time) values (" +
@@ -38,7 +36,10 @@ public class MySQLTest {
                     "CURRENT_DATE()" +
                     ")";
             try {
+
                 statement.execute(insert);
+//                connection.commit();
+                connection.rollback();
             } catch (Exception ex) {
                 System.out.println(insert);
             }
